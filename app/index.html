@@ -133,8 +133,7 @@
                       Software-Architektur, REST-API's, PHP-Framework Entwicklungen, Backend, Frontend, Linux-Server Management, Windows-Server Management, Netzwerk-Einrichtungen
                     </p>
                     <p class="lead">
-                      Ehrenamtlich baue Ich auch f&uuml;r Feuerwehren Webseiten & Schule diese damit Sie selber
-                      kleinere Anpassungen durchf&uuml;hren k&ouml;nnen.
+                      Ehrenamtlich baue Ich auch f&uuml;r Feuerwehren Webseiten und schule diese, damit Sie selber kleinere Anpassungen durchf&uuml;hren k&ouml;nnen.
                     </p>
                     <p class="lead">
                       Ich selbst bin Vater, ehrenamtlicher Feuerwehrmann, ehemaliger Jugend-Rotkreuzler.<br>
@@ -287,7 +286,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a>
                 <div class="work-img">
                   <img src="assets/img/programming-bg-2.jpg" alt="" class="img-fluid">
                 </div>
@@ -306,7 +305,7 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a>
                 <div class="work-img">
                   <img src="assets/img/programming-bg-2.jpg" alt="" class="img-fluid">
                 </div>
@@ -325,7 +324,7 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a>
                 <div class="work-img">
                   <img src="assets/img/programming-bg-2.jpg" alt="" class="img-fluid">
                 </div>
@@ -428,6 +427,39 @@
         </div>
       </div>
     </section><!-- End Contact Section -->
+
+    <!-- ======= Footer Cookie ======= -->
+    <section>
+      <div id="footer-cookie">
+      <span id="description">
+        Wir nutzen Cookies, um unsere Dienste zu erbringen und zu verbessern. Mit Nutzung dieser Seite akzeptieren Sie Cookies. <a href="https://dakitec.de/blog/cookie-banner-selbst-erstellen">Mehr erfahren</a>
+      </span>
+        <span id="accept"><a href="javascript:void(0)" title="Akzeptieren">Akzeptieren</a></span>
+      </div>
+
+      <script>
+        /*
+          www.dakitec.de - Cookie Banner
+          https://dakitec.de/blog/cookie-banner-selbst-erstellen
+          Dieses Skript zeigt den Banner an, wenn er noch nicht bestätigt wurde
+        */
+        var footerCookie = document.querySelector("#footer-cookie");
+        var footerCookieAccept = document.querySelector("#accept");
+
+        if (document.cookie.indexOf("dakitecCookieBanner=") == -1) {
+          footerCookie.style.display = "block";
+        }
+
+        footerCookieAccept.onclick = function(e) {
+          var cookieDate = new Date();
+          cookieDate.setTime(new Date().getTime() + 31104000000);
+
+          document.cookie = "dakitecCookieBanner = 1; path=/; secure; expires=" + cookieDate.toUTCString();
+
+          footerCookie.style.display = "none";
+        };
+      </script>
+    </section><!-- End Footer Cookie -->
 
   </main><!-- End #main -->
 
