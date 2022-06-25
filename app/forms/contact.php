@@ -25,13 +25,6 @@
   $contact->honeypot = $_POST['additions'];
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
 
-  $contact->smtp = array(
-    'host' => 'smtp.ionos.de',
-    'username' => 'kontakt@it-profi-koenig.de',
-    'password' => 'Bit$sectional$geo$0clambake',
-    'port' => '465'
-  );
-
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $_POST['message'], 'Message', 10);
