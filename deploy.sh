@@ -31,6 +31,9 @@ DeployChoice () {
 
 DeployLive () {
 	echo "Version?"
+	echo ""
+	echo "current Versions-Number"
+	cat version
 	echo -n "  "
 	read Version
 
@@ -46,6 +49,7 @@ DeployLive () {
   echo "docker buildx build --platform linux/amd64,linux/arm64 -f .docker/Dockerfile --push -t gandolf90/portfolio:latest ."
   docker buildx build --platform linux/amd64,linux/arm64 -f .docker/Dockerfile --push -t gandolf90/portfolio:latest .
 
+  echo "$Version" > version
 }
 
 printHeader () {
