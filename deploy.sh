@@ -50,6 +50,20 @@ DeployLive () {
   docker buildx build --platform linux/amd64,linux/arm64 -f .docker/Dockerfile --push -t gandolf90/portfolio:latest .
 
   echo "$Version" > version
+
+  printDeployHeader website
+  cat commands-to-execute-remotely.sh | ssh website
+  printDeployHeader website-2
+  cat commands-to-execute-remotely.sh | ssh website-2
+}
+
+printDeployHeader () {
+	clear
+	echo ""
+	echoWarning "----------------------------------------------------------------"
+	echoSuccess "---                    Deploy on $1                 ---"
+	echoWarning "----------------------------------------------------------------"
+	echo ""
 }
 
 printHeader () {
